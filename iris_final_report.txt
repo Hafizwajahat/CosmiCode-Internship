@@ -1,0 +1,55 @@
+
+# Final Report: Iris Species Classification
+
+## 1. Problem Statement
+The goal of this project is to build machine learning models that can accurately classify the species of iris flowers based on their morphological features: sepal length, sepal width, petal length, and petal width. The models will be trained and evaluated to identify the most accurate and reliable algorithm for this classification task.
+
+## 2. Dataset Description
+The dataset used is the classic Iris dataset, which contains 150 samples of iris flowers with the following columns:
+- `sepal_length` (cm)
+- `sepal_width` (cm)
+- `petal_length` (cm)
+- `petal_width` (cm)
+- `species`: one of three classes - Setosa, Versicolor, Virginica
+
+After removing outliers using the IQR method, 131 clean samples remained for model training.
+
+## 3. Exploratory Data Analysis (EDA)
+- The dataset is balanced with 50 samples for each class originally.
+- `petal_length` and `petal_width` show the strongest separation between species.
+- A strong correlation (0.96) was observed between petal length and petal width.
+- No missing values were present.
+- One duplicate row was removed.
+- Minor outliers in sepal width were detected and handled.
+
+## 4. Feature Engineering
+- Outliers were removed using the IQR method for each numerical column.
+- Categorical target (`species`) was label encoded.
+- Numerical features were scaled using StandardScaler to improve model performance.
+
+## 5. Model Building
+Three machine learning models were trained and evaluated:
+- **Logistic Regression**
+- **Random Forest Classifier**
+- **Support Vector Machine (SVM)**
+
+Train-test split was performed using an 80-20 ratio.
+
+## 6. Results Comparison
+
+| Model                  | Accuracy |
+|-----------------------|----------|
+| Logistic Regression   | 94.44%   |
+| Random Forest         | 96.30%   |
+| Support Vector Machine| 96.30%   |
+
+- Random Forest and SVM outperformed Logistic Regression by a small margin.
+- All models showed strong performance, particularly in distinguishing Setosa.
+- Versicolor and Virginica had minor misclassifications.
+
+## 7. Conclusion
+All three models achieved high accuracy, with Random Forest and SVM being the best performers at 96.3%. Given its balance between performance and interpretability, **Random Forest** is recommended for deployment.
+
+## 8. Submitted Files
+- `iris_final_report.txt`: This report
+- `iris_modeling_code.py`: The complete code for preprocessing, training, and evaluation
